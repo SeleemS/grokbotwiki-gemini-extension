@@ -8,6 +8,10 @@ Testing used an isolated `GEMINI_CLI_HOME`, with no model account or API key.
   directory, and listed version `0.1.0` with the context file and `grokbotwiki`
   server enabled.
 - `gemini mcp list` reported the hosted HTTP server **Connected**.
+- Installation from the public GitHub URL also succeeded, followed by extension
+  listing and a connected MCP check. This used a fresh temporary profile and the
+  CLI's file-based storage option to keep test state separate from the OS
+  keychain. Extension integrity validation remained enabled.
 - Both command files parsed as TOML and contain no shell or file interpolation.
 - Separate read-only MCP checks completed initialization and tool discovery.
   The service advertised eight tools with read-only annotations.
@@ -20,7 +24,8 @@ Testing used an isolated `GEMINI_CLI_HOME`, with no model account or API key.
 These checks establish extension loading, connection, and public-data retrieval
 at the recorded date. They do not evaluate model-generated answers or claim
 that every Gemini CLI version, platform, organization policy, or shared Bot is
-compatible. The slash-command prompts were syntax checked; no paid or
+compatible. OS keychain integration was not validated. The slash-command prompts
+were syntax checked; no paid or
 authenticated model request was made to exercise their generated answers.
 
 To check a normal installation, use `gemini extensions list` and `gemini mcp
