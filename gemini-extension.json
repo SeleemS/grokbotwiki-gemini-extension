@@ -1,0 +1,12 @@
+{
+  "name": "grokbotwiki-gemini-extension",
+  "version": "0.1.0",
+  "description": "Find community Grok Bot templates and troubleshooting guides with source links from the independent Grok Bot Wiki.",
+  "contextFileName": "GEMINI.md",
+  "mcpServers": {
+    "grokbotwiki": {
+      "httpUrl": "https://www.grokbotwiki.com/api/mcp",
+      "timeout": 30000
+    }
+  }
+}
